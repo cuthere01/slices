@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "CommonJS",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "outDir": "./dist",
+        "rootDir": "./tasks",
+        "types": ["jest"]
+    },
+    "include": ["tasks/**/*"],
+    "exclude": ["node_modules", "dist"]
+}
