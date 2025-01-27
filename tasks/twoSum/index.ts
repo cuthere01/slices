@@ -1,4 +1,6 @@
-export function twoSumBruteforce(nums: number[], target: number): number[] {
+export type ItwoSum = (nums: number[], target: number) => number[];
+
+export const twoSumBruteforce: ItwoSum = function (nums, target) {
     for (let i = 0; i < nums.length; i++) {
         for (let j = i + 1; j < nums.length; j++) {
             if (nums[i] + nums[j] === target) {
@@ -7,9 +9,9 @@ export function twoSumBruteforce(nums: number[], target: number): number[] {
         }
     }
     return [];
-} //O(n^2)
+}; //O(n^2)
 
-export function twoSumTwoPointers(nums: number[], target: number): number[] {
+export const twoSumTwoPointers: ItwoSum = function (nums, target) {
     const sorted = [...nums].sort((a, b) => a - b);
     let [left, right] = [0, nums.length - 1];
 
@@ -26,12 +28,9 @@ export function twoSumTwoPointers(nums: number[], target: number): number[] {
     }
 
     return [];
-} //O(nlogn)
+}; //O(nlogn)
 
-export function twoSumTwoPassHashMapWithObj(
-    nums: number[],
-    target: number
-): number[] {
+export const twoSumTwoPassHashMapWithObj: ItwoSum = function (nums, target) {
     const obj: Record<number, boolean> = {};
 
     nums.forEach((num) => {
@@ -46,10 +45,7 @@ export function twoSumTwoPassHashMapWithObj(
     return [];
 } //O(n)
 
-export function twoSumTwoPassHashMapWithMap(
-    nums: number[],
-    target: number
-): number[] {
+export const twoSumTwoPassHashMapWithMap: ItwoSum = function (nums, target) {
     const map: Map<number, boolean> = new Map();
 
     nums.forEach((num) => map.set(num, true));
@@ -62,10 +58,7 @@ export function twoSumTwoPassHashMapWithMap(
     return [];
 } //O(n)
 
-export function twoSumTwoPassHashMapWithSet(
-    nums: number[],
-    target: number
-): number[] {
+export const twoSumTwoPassHashMapWithSet: ItwoSum = function (nums, target) {
     const set: Set<number> = new Set();
 
     nums.forEach((num) => set.add(num));
@@ -78,10 +71,7 @@ export function twoSumTwoPassHashMapWithSet(
     return [];
 } //O(n)
 
-export function twoSumOnePassHashMapWithObj(
-    nums: number[],
-    target: number
-): number[] {
+export const twoSumOnePassHashMapWithObj: ItwoSum = function (nums, target) {
     const obj: Record<number, boolean> = {};
 
     for (const num of nums) {
@@ -91,12 +81,9 @@ export function twoSumOnePassHashMapWithObj(
         obj[num] = true;
     }
     return [];
-} //O(n)
+}; //O(n)
 
-export function twoSumOnePassHashMapWithMap(
-    nums: number[],
-    target: number
-): number[] {
+export const twoSumOnePassHashMapWithMap: ItwoSum = function (nums, target) {
     const map: Map<number, boolean> = new Map();
 
     for (const num of nums) {
@@ -108,10 +95,7 @@ export function twoSumOnePassHashMapWithMap(
     return [];
 } //O(n)
 
-export function twoSumOnePassHashMapWithSet(
-    nums: number[],
-    target: number
-): number[] {
+export const twoSumOnePassHashMapWithSet: ItwoSum = function (nums, target) {
     const set: Set<number> = new Set();
 
     for (const num of nums) {
