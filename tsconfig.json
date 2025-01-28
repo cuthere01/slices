@@ -7,7 +7,8 @@
         "skipLibCheck": true,
         "outDir": "./dist",
         "rootDir": "./tasks",
-        "types": ["jest"]
+        "types": ["jest"],
+        "downlevelIteration": true
     },
     "include": ["tasks/**/*"],
     "exclude": ["node_modules", "dist"]
