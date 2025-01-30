@@ -1,4 +1,4 @@
-class MinStack {
+export class MinStack {
     private stack: number[] = [];
     private minStack: number[] = [];
 

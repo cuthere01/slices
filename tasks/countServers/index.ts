@@ -1,4 +1,4 @@
-function countServers(grid: number[][]): number {
+export function countServers(grid: number[][]): number {
     const [rows, columns]: [number[], number[]] = [
         Array(grid.length).fill(0),
         Array(grid[0].length).fill(0),
